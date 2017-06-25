@@ -14,12 +14,9 @@ public class BackAround {
     }
 
     public static void main(String[] args) {
-//        System.out.println(backAround("cat"));
-//        System.out.println(backAround("Hello"));
-//        System.out.println(backAround("a"));
-        long startTime = System.nanoTime();
-        backAround("");
-        long endTime = System.nanoTime();
-        System.out.println(endTime - startTime);
+        System.out.println(backAround("cat"));
+        System.out.println(backAround("Hello"));
+        System.out.println(backAround("a"));
+        System.out.println("");
     }
 }
