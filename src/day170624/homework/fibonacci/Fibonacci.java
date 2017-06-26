@@ -8,6 +8,7 @@ import java.util.List;
  */
 public class Fibonacci {
     public static boolean isFibonacci(int a) {
+        // TODO Should change the algorithm
         if (a > 0 && a < 1000000) { // not negative and OutOfMemoryError plug
             if (a == 1) {
                 return true;
