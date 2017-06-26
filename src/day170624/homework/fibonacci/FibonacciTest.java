@@ -21,9 +21,9 @@ public class FibonacciTest {
         System.out.println(SimpleUnit.assertEquals(Fibonacci.isFibonacci(5), true));
         System.out.println(SimpleUnit.assertEquals(Fibonacci.isFibonacci(7), false));
         System.out.println(SimpleUnit.assertEquals(Fibonacci.isFibonacci(8), true));
-        System.out.println(SimpleUnit.assertEquals(Fibonacci.isFibonacci(0), false));
+        System.out.println(SimpleUnit.assertEquals(Fibonacci.isFibonacci(0), true));
         System.out.println(SimpleUnit.assertEquals(Fibonacci.isFibonacci(-1), false));
-        System.out.println(SimpleUnit.assertEquals(Fibonacci.isFibonacci(Integer.MAX_VALUE), false));
+        System.out.println(SimpleUnit.assertEquals(Fibonacci.isFibonacci(Integer.MAX_VALUE), true));
         System.out.println(SimpleUnit.assertEquals(Fibonacci.isFibonacci(Integer.MIN_VALUE), false));
         System.out.println(SimpleUnit.assertEquals(Fibonacci.isFibonacci(999999), false));
 
@@ -31,10 +31,10 @@ public class FibonacciTest {
         System.out.println(SimpleUnit.assertNotEquals(Fibonacci.isFibonacci(5), false));
         System.out.println(SimpleUnit.assertNotEquals(Fibonacci.isFibonacci(34), false));
         System.out.println(SimpleUnit.assertNotEquals(Fibonacci.isFibonacci(1), false));
-        System.out.println(SimpleUnit.assertNotEquals(Fibonacci.isFibonacci(0), true));
+        System.out.println(SimpleUnit.assertNotEquals(Fibonacci.isFibonacci(0), false));
         System.out.println(SimpleUnit.assertNotEquals(Fibonacci.isFibonacci(-5), true));
         System.out.println(SimpleUnit.assertNotEquals(Fibonacci.isFibonacci(Integer.MIN_VALUE), true));
-        System.out.println(SimpleUnit.assertNotEquals(Fibonacci.isFibonacci(Integer.MAX_VALUE), true));
+        System.out.println(SimpleUnit.assertNotEquals(Fibonacci.isFibonacci(Integer.MAX_VALUE), false));
         System.out.println(SimpleUnit.assertNotEquals(Fibonacci.isFibonacci(999999), true));
     }
 }
