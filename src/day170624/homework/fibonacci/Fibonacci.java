@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * Created by Duelist on 25.06.2017.
  */
+
 public class Fibonacci {
     public static boolean isFibonacci(int a) {
         int fib1 = 0;
