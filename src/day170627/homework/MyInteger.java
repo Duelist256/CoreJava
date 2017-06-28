@@ -6,12 +6,17 @@ package day170627.homework;
 public class MyInteger {
     public static String toBinaryString(int x) {
 
+        if (x == 0) {
+            return "0";
+        }
+
         String str = "";
 
         // if number is negative
         if (x < 0) {
             x = x + 1;
             int num;
+
             while (x != 0) {
                 num = Math.abs(x % 2);
                 if (num == 1) {
@@ -21,7 +26,9 @@ public class MyInteger {
                 }
                 x /= 2;
             }
+
             int strLength = str.length();
+
             for (int i = 0; i < 32 - strLength; i++) {
                 str = "1" + str;
             }
@@ -30,7 +37,7 @@ public class MyInteger {
 
         // if number is positive
         while (x != 0) {
-            str = Math.abs(x % 2) + str;
+            str = (x % 2) + str;
             x /= 2;
         }
 
@@ -38,16 +45,61 @@ public class MyInteger {
     }
 
     public static String toHexString(int x) {
-        // TODO !
-        return "";
+
+        if (x == 0) {
+            return "0";
+        }
+
+        final String HEX_NUMERALS = "0123456789abcdef";
+        String str = "";
+
+        // if number is negative
+        if (x < 0) {
+            x = x + 1;
+            int num;
+
+            while (x != 0) {
+                num = Math.abs(x % 16);
+                str = HEX_NUMERALS.charAt(Math.abs(num - 15)) + str;
+                x /= 16;
+            }
+
+            int strLength = str.length();
+
+            for (int i = 0; i < 8 - strLength; i++) {
+                str = "f" + str;
+            }
+            return str;
+        }
+
+        while (x != 0) {
+            str = HEX_NUMERALS.charAt(x % 16) + str;
+            x /= 16;
+        }
+        return str;
     }
 
-    public static String toOctString(int x) {
-        // TODO !
-        return "";
+    public static String toOctalString(int x) {
+        if (x == 0) {
+            return "0";
+        }
+
+        String str = "";
+
+        // FIXME Negative case
+
+        while (x != 0) {
+            str = Math.abs(x % 8) + str;
+            x /= 8;
+        }
+        return str;
     }
 
     public static String toString(int x, int base) {
+
+        if (x == 0) {
+            return "0";
+        }
 
         if (base < 2 || base > 36) {
             return "" + x;
