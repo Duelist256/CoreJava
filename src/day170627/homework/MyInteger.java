@@ -5,13 +5,35 @@ package day170627.homework;
  */
 public class MyInteger {
     public static String toBinaryString(int x) {
+
         String str = "";
+
+        // if number is negative
+        if (x < 0) {
+            x = x + 1;
+            int num;
+            while (x != 0) {
+                num = Math.abs(x % 2);
+                if (num == 1) {
+                    str = ("0" + str);
+                } else {
+                    str = ("1" + str);
+                }
+                x /= 2;
+            }
+            int strLength = str.length();
+            for (int i = 0; i < 32 - strLength; i++) {
+                str = "1" + str;
+            }
+            return str;
+        }
+
+        // if number is positive
         while (x != 0) {
             str = Math.abs(x % 2) + str;
             x /= 2;
         }
 
-        // TODO Negative
         return str;
     }
 

@@ -12,10 +12,10 @@ public class MyIntegerTest {
         System.out.println(Asserts.assertEquals(MyInteger.toBinaryString(11), Integer.toBinaryString(11)));
         System.out.println(Asserts.assertEquals(MyInteger.toBinaryString(Integer.MAX_VALUE), Integer.toBinaryString(Integer.MAX_VALUE)));
         System.out.println(Asserts.assertEquals(MyInteger.toBinaryString(-10), Integer.toBinaryString(-10)));
-        System.out.println(Asserts.assertEquals(MyInteger.toBinaryString(-12222220), Integer.toBinaryString(-10)));
+        System.out.println(Asserts.assertEquals(MyInteger.toBinaryString(-12222220), Integer.toBinaryString(-12222220)));
         System.out.println(Asserts.assertEquals(MyInteger.toBinaryString(Integer.MIN_VALUE), Integer.toBinaryString(Integer.MIN_VALUE)));
 
-        System.out.println("toString() test");
+        System.out.println("\ntoString() test");
         System.out.println("base 2 test");
         System.out.println(Asserts.assertEquals(MyInteger.toString(10, 2), Integer.toString(10, 2)));
         System.out.println(Asserts.assertEquals(MyInteger.toString(-10, 2), Integer.toString(-10, 2)));
