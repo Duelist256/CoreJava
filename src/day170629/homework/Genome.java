@@ -3,7 +3,7 @@ package day170629.homework;
 
 /**
  * Created by Duelist on 29.06.2017.
- **/
+ */
 public class Genome {
     public static void main(String[] args) {
         byte[] data = DataGenerator.generate(21);
