@@ -17,7 +17,7 @@ public class Genome {
     }
 
     public static int compare(byte[] data, int length) {
-        boolean isEqual = false;
+        boolean isEqual = false;//
         int counter = 0;
         for (int i = 0; i < data.length - length; i++) {
             TAG:
