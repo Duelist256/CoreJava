@@ -36,9 +36,7 @@ public class MyIntegerTest {
         System.out.println(Asserts.assertEquals(MyInteger.toOctalString(5), Integer.toOctalString(5)));
         System.out.println(Asserts.assertEquals(MyInteger.toOctalString(9), Integer.toOctalString(9)));
         System.out.println(Asserts.assertEquals(MyInteger.toOctalString(Integer.MAX_VALUE), Integer.toOctalString(Integer.MAX_VALUE)));
-        System.out.println(Asserts.assertEquals(MyInteger.toOctalString(-9), Integer.toOctalString(-9)));
-        System.out.println(Asserts.assertEquals(MyInteger.toOctalString(-221), Integer.toOctalString(-221)));
-        System.out.println(Asserts.assertEquals(MyInteger.toOctalString(-214748364), Integer.toOctalString(-214748364)));
+        System.out.println(Asserts.assertEquals(MyInteger.toOctalString(-10), Integer.toOctalString(-10)));
 
         System.out.println("\ntoString() test");
         System.out.println("base 2 test");
@@ -85,8 +83,6 @@ public class MyIntegerTest {
         System.out.println(Asserts.assertEquals(MyInteger.toString(Integer.MIN_VALUE, 24), Integer.toString(Integer.MIN_VALUE, 24)));
         System.out.println(Asserts.assertNotEquals(MyInteger.toString(219, 24), Integer.toString(218, 24)));
         System.out.println(Asserts.assertNotEquals(MyInteger.toString(-218, 24), Integer.toString(-219, 24)));
-        System.out.println(MyInteger.toString(911, 24));
-        System.out.println(Integer.toString(911, 24));
 
         System.out.println("base 35 test");
         System.out.println(Asserts.assertEquals(MyInteger.toString(651, 35), Integer.toString(651, 35)));

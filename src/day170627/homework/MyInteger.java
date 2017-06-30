@@ -74,7 +74,7 @@ public class MyInteger {
 
         while (x != 0) {
             str = HEX_NUMERALS.charAt(x % 16) + str;
-            x /= 16;
+            x /=  16;
         }
         return str;
     }
