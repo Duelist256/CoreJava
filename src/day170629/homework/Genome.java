@@ -13,24 +13,6 @@ public class Genome {
         }
 
         System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
         System.out.println("\nTotal founded: " + compare(data, 3));
     }
 
@@ -40,11 +22,6 @@ public class Genome {
         for (int i = 0; i < data.length - length; i++) {
             TAG:
             for (int j = i + 1; j < data.length - length; j++) {
-                if (isEqual) {
-                    counter++;
-                    System.out.println(i + " and " + (j-1));
-                }
-
                 for (int k = 0; k < length; k++) {
                     if (data[i + k] == data[j + k]) {
                         isEqual = true;
@@ -52,6 +29,10 @@ public class Genome {
                         isEqual = false;
                         continue TAG;
                     }
+                }
+                if (isEqual) {
+                    counter++;
+                    System.out.println(i + " and " + (j));
                 }
             }
         }
