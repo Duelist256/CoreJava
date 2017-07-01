@@ -5,8 +5,11 @@ package day170629.homework;
  * Created by Duelist on 29.06.2017.
  */
 public class Genome {
+
+    public static final int GENOME_SIZE = 21;
+
     public static void main(String[] args) {
-        byte[] data = DataGenerator.generate(21);
+        byte[] data = DataGenerator.generate(GENOME_SIZE);
 
         for (byte b: data) {
             System.out.print(((char) b));
@@ -17,7 +20,7 @@ public class Genome {
     }
 
     public static int compare(byte[] data, int length) {
-        boolean isEqual = false;//
+        boolean isEqual = false;
         int counter = 0;
         for (int i = 0; i < data.length - length; i++) {
             TAG:
