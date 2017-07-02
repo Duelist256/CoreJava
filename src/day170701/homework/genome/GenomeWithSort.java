@@ -36,7 +36,7 @@ public class GenomeWithSort {
     }
 
     public static void main(String[] args) {
-        byte[] data = DataGenerator.generate(GENOME_SIZE);
+        byte[] data = DataGenerator.generate(GENOME_SIZE + WORD_SIZE);
         List<Word> list = new ArrayList<>();
 
         for (int i = 0; i < data.length - WORD_SIZE; i++) {
@@ -45,6 +45,20 @@ public class GenomeWithSort {
 
         Collections.sort(list);
 
+        // counting
+        int count = 0;
+        for (int i = 0; i < list.size() - 1; i++) {
+            Word comparedWord = list.get(i);
+            for (int j = i + 1; j < list.size() - 1; j++) {
+                if (comparedWord.compareTo(list.get(j)) == 0) {
+                    count++;
+                    System.out.println(i + " and " + j);
+                }
+            }
+        }
+        System.out.println("Total count is: " + count);
+
+        // show all elements
         for (Word word : list) {
             byte[] wordBytes = Arrays.copyOfRange(data, word.offset,
                     word.offset + WORD_SIZE);
