@@ -3,7 +3,6 @@ package day170701.homework.genome;
 import day170629.homework.DataGenerator;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -11,8 +10,8 @@ import java.util.List;
  * Created by Duelist on 01.07.2017.
  */
 public class GenomeWithSort {
-    private static final int GENOME_SIZE = 21;
-    private static final int WORD_SIZE = 3;
+    private static final int GENOME_SIZE = 21111;
+    private static final int WORD_SIZE = 222;
 
     static class Word implements Comparable<Word> {
         byte[] data;
@@ -46,23 +45,26 @@ public class GenomeWithSort {
         Collections.sort(list);
 
         // counting
+        long startTime = System.nanoTime();
         int count = 0;
         for (int i = 0; i < list.size() - 1; i++) {
             Word comparedWord = list.get(i);
             for (int j = i + 1; j < list.size() - 1; j++) {
                 if (comparedWord.compareTo(list.get(j)) == 0) {
                     count++;
-                    System.out.println(i + " and " + j);
+                    //System.out.println(i + " and " + j);
                 }
             }
         }
+        long endTime = System.nanoTime();
+        System.out.println("Time: " + (endTime - startTime) / 1000000 + " milliseconds");
         System.out.println("Total count is: " + count);
 
         // show all elements
-        for (Word word : list) {
-            byte[] wordBytes = Arrays.copyOfRange(data, word.offset,
-                    word.offset + WORD_SIZE);
-            System.out.println(Arrays.toString(wordBytes));
-        }
+//        for (Word word : list) {
+//            byte[] wordBytes = Arrays.copyOfRange(data, word.offset,
+//                    word.offset + WORD_SIZE);
+//            System.out.println(Arrays.toString(wordBytes));
+//        }
     }
 }
