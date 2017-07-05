@@ -9,21 +9,32 @@ public class Make2 {
 
     private static int[] make2(int[] a, int[] b) {
         int[] newArray = new int[2];
+        
+        if (a.length + b.length >= 2) {
+            if (a.length == 1) {
+                newArray[0] = a[0];
 
-        if (a.length >= 2) {
-            for (int i = 0; i < newArray.length; i++) {
-                newArray[i] = a[i];
+                if (b.length >= 1) {
+                    newArray[1] = b[0];
+                }
             }
-        } else {
-            for (int i = 0; i < a.length; i++) {
-                newArray[i] = a[i];
+
+            if (a.length >= 2) {
+                newArray[0] = a[0];
+                newArray[1] = a[1];
+            }
+
+            if (a.length < 1) {
+                if (b.length == 1) {
+                    newArray[0] = b[0];
+                }
+
+                if (b.length >= 2) {
+                    newArray[0] = b[0];
+                    newArray[1] = b[1];
+                }
             }
         }
-
-        for (int i = a.length, j = 0; i < newArray.length; i++, j++) {
-            newArray[i] = b[j];
-        }
-
         return newArray;
     }
 
