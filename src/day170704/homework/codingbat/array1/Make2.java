@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Created by Duelist on 05.07.2017.
  */
 public class Make2 {
-    
+
     private static int[] make2(int[] a, int[] b) {
         int[] newArray = new int[2];
 
