@@ -5,7 +5,7 @@ package day170620.homework.warmup1;
  */
 public class IntMax {
     private static int intMax(int a, int b, int c) {
-        if(a >= b && a >= c) {
+        if (a >= b && a >= c) {
             return a;
         } else if (b >= a && b >= c) {
             return b;

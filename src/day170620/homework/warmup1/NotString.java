@@ -6,7 +6,7 @@ package day170620.homework.warmup1;
 public class NotString {
 
     private static String notString(String str) {
-        if(str.length() >= 3 && str.substring(0, 3).equals("not")) {
+        if (str.length() >= 3 && str.substring(0, 3).equals("not")) {
             return str;
         }
         return "not " + str;

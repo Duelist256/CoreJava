@@ -11,8 +11,9 @@ public class StartOz {
             newString += 'o';
         }
 
-        if (strLength >= 2 && str.charAt(1) == 'z')
+        if (strLength >= 2 && str.charAt(1) == 'z') {
             newString += 'z';
+        }
 
         return newString;
     }

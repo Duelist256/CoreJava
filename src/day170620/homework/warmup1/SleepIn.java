@@ -2,11 +2,11 @@ package day170620.homework.warmup1;
 
 /**
  * Created by Duelist on 22.06.2017.
- *
+ * <p>
  * The parameter weekday is true if it is a weekday, and the parameter vacation is true
  * if we are on vacation. We sleep in if it is not a weekday or we're on vacation.
  * Return true if we sleep in.
- *
+ * <p>
  * sleepin(false, false) → true
  * sleepin(true, false) → false
  * sleepin(false, true) → true

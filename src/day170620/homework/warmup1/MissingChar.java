@@ -6,7 +6,7 @@ package day170620.homework.warmup1;
 public class MissingChar {
     private static String missingChar(String str, int n) {
         String newStr = "";
-        if (n >= 0 && n <= str.length()-1) {
+        if (n >= 0 && n <= str.length() - 1) {
             for (int i = 0; i < str.length(); i++) {
                 if (n != i) {
                     newStr += str.charAt(i);

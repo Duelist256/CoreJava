@@ -5,7 +5,7 @@ package day170620.homework.warmup1;
  */
 public class MixStart {
     private static boolean mixStart(String str) {
-            return (str.length() >= 3) && (str.substring(1, 3).equals("ix"));
+        return (str.length() >= 3) && (str.substring(1, 3).equals("ix"));
     }
 
     public static void main(String[] args) {

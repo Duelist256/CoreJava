@@ -10,7 +10,7 @@ public class EndUp {
             return str.toUpperCase();
         }
 
-        return str.substring(0, strLength-3) + str.substring(strLength-3, strLength).toUpperCase();
+        return str.substring(0, strLength - 3) + str.substring(strLength - 3, strLength).toUpperCase();
     }
 
     public static void main(String[] args) {

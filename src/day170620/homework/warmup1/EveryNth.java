@@ -6,7 +6,7 @@ package day170620.homework.warmup1;
 public class EveryNth {
     private static String everyNth(String str, int n) {
         String newString = "";
-        for (int i = 0; i < str.length() -1; i += n) {
+        for (int i = 0; i < str.length() - 1; i += n) {
             newString += str.charAt(i);
         }
         return newString;

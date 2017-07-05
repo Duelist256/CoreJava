@@ -8,8 +8,9 @@ public class Max1020 {
         boolean aRange = (a >= 10 && a <= 20);
         boolean bRange = (b >= 10 && b <= 20);
         if (aRange && bRange) {
-            if (a > b)
+            if (a > b) {
                 return a;
+            }
             return b;
         }
         if (aRange) {

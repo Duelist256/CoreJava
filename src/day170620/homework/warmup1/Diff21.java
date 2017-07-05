@@ -6,8 +6,8 @@ package day170620.homework.warmup1;
 public class Diff21 {
     public static int diff21(int n) {
         int difference = 21 - n;
-        if(difference < 0) {
-            return 2* (difference - difference * 2);
+        if (difference < 0) {
+            return 2 * (difference - difference * 2);
         }
         return difference;
     }

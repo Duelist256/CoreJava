@@ -6,7 +6,7 @@ package day170620.homework.warmup1;
 public class BackAround {
     private static String backAround(String str) {
         try {
-            char lastChar = str.charAt(str.length()-1);
+            char lastChar = str.charAt(str.length() - 1);
             return lastChar + str + lastChar;
         } catch (StringIndexOutOfBoundsException e) {
             return str;
