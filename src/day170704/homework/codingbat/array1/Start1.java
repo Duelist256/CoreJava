@@ -8,16 +8,12 @@ public class Start1 {
     private static int start1(int[] a, int[] b) {
         int count = 0;
 
-        for (int num : a) {
-            if (num == 1) {
-                count++;
-            }
+        if (a.length >= 1 && a[0] == 1) {
+            count++;
         }
 
-        for (int num : b) {
-            if (num == 1) {
-                count++;
-            }
+        if (b.length >= 1 && b[0] == 1) {
+            count++;
         }
 
         return count;
