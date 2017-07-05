@@ -11,7 +11,6 @@ public class ArraysExamples {
 
         String[] strings = {"one", "two", "three", "four", "five"};
         System.out.println(Arrays.toString(strings));
-        print(strings);
 
         foo(1, 2, 3);
         int[] array = new int[]{1, 2, 3};
@@ -22,18 +21,5 @@ public class ArraysExamples {
         for (int elem : arr) {
             System.out.println(elem);
         }
-    }
-
-    private static void print(String[] strings) {
-        // TODO TDD
-        System.out.print("[");
-        int i = 0;
-        while (i < strings.length) {
-            System.out.print(" " + strings[i++]);
-            if (i != strings.length) {
-                System.out.print(",");
-            }
-        }
-        System.out.print("]");
     }
 }
