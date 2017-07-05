@@ -1,4 +1,4 @@
-package day170620.homework.warmup2.altpairs;
+package day170620.homework.warmup2;
 
 /**
  * Created by Duelist on 26.06.2017.

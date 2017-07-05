@@ -1,4 +1,4 @@
-package day170620.homework.warmup2.stringtimes;
+package day170620.homework.warmup2;
 
 /**
  * Created by Duelist on 25.06.2017.
