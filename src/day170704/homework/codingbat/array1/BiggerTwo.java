@@ -8,21 +8,14 @@ import java.util.Arrays;
 public class BiggerTwo {
 
     private static int[] biggerTwo(int[] a, int[] b) {
-        int aSum = 0;
-        for (int num : a) {
-            aSum += num;
+        if (a.length == 2 && b.length == 2) {
+            if (a[0] + a[1] >= b[0] + b[1]) {
+                return a;
+            } else {
+                return b;
+            }
         }
-
-        int bSum = 0;
-        for (int num : b) {
-            bSum += num;
-        }
-
-        if (aSum >= bSum) {
-            return a;
-        }
-
-        return b;
+        return a;
     }
 
     public static void main(String[] args) {
