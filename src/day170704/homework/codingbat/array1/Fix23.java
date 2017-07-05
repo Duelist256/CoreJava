@@ -1,4 +1,4 @@
-package day170704.homework.codingbat;
+package day170704.homework.codingbat.array1;
 
 import java.util.Arrays;
 
