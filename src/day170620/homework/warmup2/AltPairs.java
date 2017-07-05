@@ -14,7 +14,7 @@ public class AltPairs {
         for (int i = 0; i < strLength; i += 4) {
             newStr = newStr + str.charAt(i);
             if (i < strLength - 1) {
-                newStr = newStr + str.charAt(i+1);
+                newStr = newStr + str.charAt(i + 1);
             }
         }
         return newStr;

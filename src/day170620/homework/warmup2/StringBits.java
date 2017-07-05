@@ -7,7 +7,7 @@ public class StringBits {
     private static String stringBits(String str) {
         String newStr = "";
         int strLength = str.length();
-        for (int i = 0; i < strLength; i+=2) {
+        for (int i = 0; i < strLength; i += 2) {
             newStr += str.charAt(i);
         }
         return newStr;

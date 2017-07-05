@@ -16,7 +16,7 @@ public class Last2 {
                 index = findStr.indexOf(last, index);
                 if (index != -1) {
                     count++;
-                    index ++;
+                    index++;
                 } else {
                     return count;
                 }

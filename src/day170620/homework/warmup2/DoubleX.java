@@ -6,7 +6,7 @@ package day170620.homework.warmup2;
 public class DoubleX {
     private static boolean doubleX(String str) {
         for (int i = 1; i < str.length(); i++) {
-            if (str.charAt(i-1) == 'x'){
+            if (str.charAt(i - 1) == 'x') {
                 return str.charAt(i) == 'x';
             }
         }

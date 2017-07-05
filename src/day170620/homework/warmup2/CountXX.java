@@ -9,7 +9,7 @@ public class CountXX {
         int strLength = str.length();
 
         for (int i = 1; i < strLength; i++) {
-            if ("xx".equals(str.substring(i-1, i+1))) {
+            if ("xx".equals(str.substring(i - 1, i + 1))) {
                 count++;
             }
         }

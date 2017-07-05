@@ -12,13 +12,13 @@ public class StringX {
         }
 
         String newStr = "";
-        String substr = str.substring(1, strLength-1);
+        String substr = str.substring(1, strLength - 1);
         for (int i = 0; i < substr.length(); i++) {
             if (substr.charAt(i) != 'x') {
                 newStr += substr.charAt(i);
             }
         }
-        return str.charAt(0) + newStr + str.charAt(strLength-1);
+        return str.charAt(0) + newStr + str.charAt(strLength - 1);
     }
 
 

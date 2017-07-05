@@ -6,9 +6,10 @@ package day170620.homework.warmup2;
 public class ArrayCount9 {
     private static int arrayCount9(int[] nums) {
         int count = 0;
-        for (int i: nums) {
-            if (i == 9)
+        for (int i : nums) {
+            if (i == 9) {
                 count++;
+            }
         }
         return count;
     }

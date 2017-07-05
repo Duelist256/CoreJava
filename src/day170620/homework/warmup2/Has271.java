@@ -6,8 +6,8 @@ package day170620.homework.warmup2;
 public class Has271 {
     private static boolean has271(int[] nums) {
         for (int i = 2; i < nums.length; i++) {
-            if (Math.abs(nums[i-1] - nums[i-2]) == 5
-                    && Math.abs(nums[i-2] - nums[i] - 1) <= 2) {
+            if (Math.abs(nums[i - 1] - nums[i - 2]) == 5
+                    && Math.abs(nums[i - 2] - nums[i] - 1) <= 2) {
                 return true;
             }
         }

@@ -10,22 +10,23 @@ public class StringMatch {
         int count = 0;
 
         if (aLength > bLength) {
-            for (int i = 0; i < bLength -1; i++) {
-                if ((a.substring(i, i+2)).equals(b.substring(i, i+2))) {
+            for (int i = 0; i < bLength - 1; i++) {
+                if ((a.substring(i, i + 2)).equals(b.substring(i, i + 2))) {
                     count++;
                 }
             }
             return count;
         }
 
-        for (int i = 0; i < aLength -1; i++) {
-            if ((b.substring(i, i+2)).equals(a.substring(i, i+2))) {
+        for (int i = 0; i < aLength - 1; i++) {
+            if ((b.substring(i, i + 2)).equals(a.substring(i, i + 2))) {
                 count++;
             }
         }
 
         return count;
     }
+
     public static void main(String[] args) {
         System.out.println(stringMatch("xxcaazz", "xxbaaz"));
         System.out.println(stringMatch("abc", "abc"));

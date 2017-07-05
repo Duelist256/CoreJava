@@ -10,7 +10,7 @@ public class StringSplosion {
         String newStr = "";
 
         for (int i = 0; i < strLength; i++) {
-            newStr += str.substring(0, i+1);
+            newStr += str.substring(0, i + 1);
         }
         return newStr;
     }

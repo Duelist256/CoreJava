@@ -7,7 +7,7 @@ public class Array123 {
     private static boolean array123(int[] nums) {
         if (nums.length >= 3) {
             for (int i = 2; i < nums.length; i++) {
-                if (nums[i] == 3 && nums[i-1] == 2 && nums[i-2] == 1) {
+                if (nums[i] == 3 && nums[i - 1] == 2 && nums[i - 2] == 1) {
                     return true;
                 }
             }
