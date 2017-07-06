@@ -5,24 +5,23 @@ package day170704.homework.array;
  */
 
 public class MyArrays {
-
-    // TODO Rewrite with StringBuilder
+    
     public static String toString(String[] strings) {
-        String str = "[";
+        StringBuilder sb = new StringBuilder("[");
 
         if (strings == null) {
             return "null";
         }
 
         if (strings.length > 1) {
-            str += strings[0];
+            sb.append(strings[0]);
         }
 
         for (int i = 1; i < strings.length; i++) {
-            str += ", " + strings[i];
+            sb.append(", ").append(strings[i]);
         }
 
-        str += "]";
-        return str;
+        sb.append("]");
+        return sb.toString();
     }
 }
