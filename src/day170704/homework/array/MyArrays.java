@@ -5,6 +5,8 @@ package day170704.homework.array;
  */
 
 public class MyArrays {
+
+    // TODO Rewrite with StringBuilder
     public static String toString(String[] strings) {
         String str = "[";
 
