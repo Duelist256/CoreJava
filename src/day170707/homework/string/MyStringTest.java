@@ -27,5 +27,9 @@ public class MyStringTest {
 
         // check string with left side white spaces
         System.out.println(Asserts.assertEquals(MyString.trim(string3), string2));
+
+        // check string with both side white spaces
+        System.out.println(Asserts.assertEquals(MyString.trim(string1), string2));
+        System.out.println(Asserts.assertEquals(MyString.trim("    k     "), "k"));
     }
 }
