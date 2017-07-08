@@ -20,6 +20,11 @@ public class MyString {
             i--;
         }
 
-        return str.substring(0, i + 1);
+        int j = 0;
+        while (str.charAt(j) <= ' ') {
+            j++;
+        }
+
+        return str.substring(j, i + 1);
     }
 }

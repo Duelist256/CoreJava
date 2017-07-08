@@ -17,11 +17,15 @@ public class MyStringTest {
 
         // check empty string
         System.out.println(Asserts.assertEquals(MyString.trim(string6), string6));
+
         // check trimmed string
         System.out.println(Asserts.assertEquals(MyString.trim(string2), string2));
 
         // check string with right side white spaces
-        System.out.println(Asserts.assertEquals(MyString.trim(string4), string2));
         System.out.println(Asserts.assertEquals(MyString.trim(string5), "He l l o"));
+        System.out.println(Asserts.assertEquals(MyString.trim(string4), string2.trim()));
+
+        // check string with left side white spaces
+        System.out.println(Asserts.assertEquals(MyString.trim(string3), string2));
     }
 }
