@@ -15,8 +15,11 @@ public class MyString {
             return str;
         }
 
-        // TODO
+        int i = str.length() - 1;
+        while (str.charAt(i) <= ' ') {
+            i--;
+        }
 
-        return str;
+        return str.substring(0, i + 1);
     }
 }
