@@ -10,12 +10,12 @@ public class No14 {
         boolean has4 = false;
 
         if (nums.length >= 2) {
-            for (int i = 0; i < nums.length; i++) {
-                if (nums[i] == 1) {
+            for (int num : nums) {
+                if (num == 1) {
                     has1 = true;
                 }
 
-                if (nums[i] == 4) {
+                if (num == 4) {
                     has4 = true;
                 }
             }

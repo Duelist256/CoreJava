@@ -6,8 +6,8 @@ package day170704.homework.codingbat.array2;
 public class Only14 {
 
     private static boolean only14(int[] nums) {
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != 1 && nums[i] != 4) {
+        for (int num : nums) {
+            if (num != 1 && num != 4) {
                 return false;
             }
         }

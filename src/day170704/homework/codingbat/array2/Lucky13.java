@@ -6,8 +6,8 @@ package day170704.homework.codingbat.array2;
 public class Lucky13 {
 
     private static boolean lucky13(int[] nums) {
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == 1 || nums[i] == 3) {
+        for (int num : nums) {
+            if (num == 1 || num == 3) {
                 return false;
             }
         }

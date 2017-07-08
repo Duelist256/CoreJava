@@ -9,12 +9,12 @@ public class Sum67 {
         int sum = 0;
         boolean startCounting = true;
 
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == 6) {
+        for (int num : nums) {
+            if (num == 6) {
                 startCounting = false;
             }
 
-            if (nums[i] == 7) {
+            if (num == 7) {
                 if (!startCounting) {
                     startCounting = true;
                     continue;
@@ -23,7 +23,7 @@ public class Sum67 {
             }
 
             if (startCounting) {
-                sum += nums[i];
+                sum += num;
             }
         }
         return sum;

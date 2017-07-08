@@ -9,12 +9,12 @@ public class More14 {
         int sum1 = 0;
         int sum4 = 0;
 
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == 1) {
+        for (int num : nums) {
+            if (num == 1) {
                 sum1++;
             }
 
-            if (nums[i] == 4) {
+            if (num == 4) {
                 sum4++;
             }
         }
