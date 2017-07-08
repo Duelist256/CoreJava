@@ -8,6 +8,11 @@ import day170624.mytestframework.Asserts;
 public class MyStringTest {
 
     public static void main(String[] args) {
+
+        /*
+        * trim() test
+        */
+
         String string1 = "   Hello ";
         String string2 = "Hello"; // trimmed
         String string3 = "  Hello";
