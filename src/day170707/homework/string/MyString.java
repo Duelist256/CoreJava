@@ -32,4 +32,17 @@ public class MyString {
             return str.substring(j, i + 1);
         }
     }
+
+    public static String replace(String string, String target, String replacement) {
+        StringBuilder sb = new StringBuilder(string);
+
+        int indexOfTarget = sb.indexOf(target);
+        while (indexOfTarget != -1) {
+            sb.delete(indexOfTarget, indexOfTarget + target.length());
+            sb.insert(indexOfTarget, replacement);
+            indexOfTarget = sb.indexOf(target);
+        }
+
+        return sb.toString();
+    }
 }

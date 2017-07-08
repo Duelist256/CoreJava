@@ -43,5 +43,12 @@ public class MyStringTest {
         System.out.println(Asserts.assertEquals(MyString.trim("  \t\n  "), ""));
         System.out.println(Asserts.assertEquals(MyString.trim("  \r\n  "), ""));
         System.out.println(Asserts.assertEquals(MyString.trim("  \n  \r"), ""));
+
+        /*
+        * replace() test
+        */
+
+        String string = "hehehe";
+        System.out.println(Asserts.assertEquals(MyString.replace(string, "he", "ha"), string.replace("he", "ha")));
     }
 }
