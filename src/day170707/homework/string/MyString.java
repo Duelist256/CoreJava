@@ -34,9 +34,19 @@ public class MyString {
     }
 
     public static String replace(String string, String target, String replacement) {
-        StringBuilder sb = new StringBuilder(string);
 
+
+        StringBuilder sb = new StringBuilder(string);
         int indexOfTarget = sb.indexOf(target);
+
+        if ("".equals(target)) {
+            int length = sb.length();
+            for (int i = 0; i <= length * 2; i += 2) {
+                sb.insert(i, replacement);
+            }
+            return sb.toString();
+        }
+
         while (indexOfTarget != -1) {
             sb.delete(indexOfTarget, indexOfTarget + target.length());
             sb.insert(indexOfTarget, replacement);

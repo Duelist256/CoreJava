@@ -50,7 +50,12 @@ public class MyStringTest {
 
         String string = "hehehe";
         System.out.println(Asserts.assertEquals(MyString.replace(string, "he", "ha"), "hahaha"));
+
         string = "kekekekekekekeke";
         System.out.println(Asserts.assertEquals(MyString.replace(string, "ke", "ol"), "olololololololol"));
+
+        string = "";
+        System.out.println(Asserts.assertEquals(MyString.replace(string, "", "hello"), "hello"));
+        System.out.println(Asserts.assertEquals(MyString.replace(string, "", "5"), "5"));
     }
 }
