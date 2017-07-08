@@ -35,6 +35,9 @@ public class MyString {
 
     public static String replace(String string, String target, String replacement) {
 
+        if (string == null) {
+            return "null";
+        }
 
         StringBuilder sb = new StringBuilder(string);
         int indexOfTarget = sb.indexOf(target);

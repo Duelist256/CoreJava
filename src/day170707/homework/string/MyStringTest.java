@@ -70,5 +70,7 @@ public class MyStringTest {
         string = "        ";
         System.out.println(Asserts.assertEquals(MyString.replace(string, "  ", "he"), "hehehehe"));
 
+        string = null;
+        System.out.println(Asserts.assertEquals(MyString.replace(string, "  ", "he"), "null"));
     }
 }
