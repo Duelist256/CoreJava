@@ -49,6 +49,8 @@ public class MyStringTest {
         */
 
         String string = "hehehe";
-        System.out.println(Asserts.assertEquals(MyString.replace(string, "he", "ha"), string.replace("he", "ha")));
+        System.out.println(Asserts.assertEquals(MyString.replace(string, "he", "ha"), "hahaha"));
+        string = "kekekekekekekeke";
+        System.out.println(Asserts.assertEquals(MyString.replace(string, "ke", "ol"), "olololololololol"));
     }
 }
