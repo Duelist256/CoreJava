@@ -23,7 +23,7 @@ public class MyStringTest {
 
         // check string with right side white spaces
         System.out.println(Asserts.assertEquals(MyString.trim(string5), "He l l o"));
-        System.out.println(Asserts.assertEquals(MyString.trim(string4), string2.trim()));
+        System.out.println(Asserts.assertEquals(MyString.trim(string4), string4.trim()));
 
         // check string with left side white spaces
         System.out.println(Asserts.assertEquals(MyString.trim(string3), string2));
@@ -31,5 +31,12 @@ public class MyStringTest {
         // check string with both side white spaces
         System.out.println(Asserts.assertEquals(MyString.trim(string1), string2));
         System.out.println(Asserts.assertEquals(MyString.trim("    k     "), "k"));
+
+        // some other tests
+        System.out.println(Asserts.assertEquals(MyString.trim("    "), ""));
+        System.out.println(Asserts.assertEquals(MyString.trim("  \n\n  "), ""));
+        System.out.println(Asserts.assertEquals(MyString.trim("  \t\n  "), ""));
+        System.out.println(Asserts.assertEquals(MyString.trim("  \r\n  "), ""));
+        System.out.println(Asserts.assertEquals(MyString.trim("  \n  \r"), ""));
     }
 }

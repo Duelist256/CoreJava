@@ -16,15 +16,20 @@ public class MyString {
         }
 
         int i = str.length() - 1;
-        while (str.charAt(i) <= ' ') {
+        while (i > 0 && str.charAt(i) <= ' ') {
             i--;
         }
 
         int j = 0;
-        while (str.charAt(j) <= ' ') {
+        while (j < str.length() && str.charAt(j) <= ' ') {
             j++;
         }
 
-        return str.substring(j, i + 1);
+
+        if (i < 0 || j >= str.length()) {
+            return "";
+        } else {
+            return str.substring(j, i + 1);
+        }
     }
 }
