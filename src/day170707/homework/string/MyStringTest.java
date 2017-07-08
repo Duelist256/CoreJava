@@ -62,5 +62,7 @@ public class MyStringTest {
         System.out.println(Asserts.assertEquals(MyString.replace(string, "", "|"), "|h|e|l|l|o|"));
         string = "world";
         System.out.println(Asserts.assertEquals(MyString.replace(string, "", "|"), "|w|o|r|l|d|"));
+
+        System.out.println(Asserts.assertEquals(MyString.replace(string, string, ""), ""));
     }
 }
