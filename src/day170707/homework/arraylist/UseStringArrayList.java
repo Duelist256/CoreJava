@@ -7,7 +7,7 @@ public class UseStringArrayList {
     public static void main(String[] args) {
 
         StringArrayList list = new StringArrayList();
-        
+
         System.out.println(list);
 
         list.add("two");
@@ -31,5 +31,8 @@ public class UseStringArrayList {
 
         list.set(0, "four");
         System.out.println(list);
+
+        System.out.println(list.get(0));
+        System.out.println(list.get(1));
     }
 }

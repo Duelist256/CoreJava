@@ -54,6 +54,14 @@ public class StringArrayList {
         }
     }
 
+    public String get(int index) {
+        if (index < elements.length && index >= 0) {
+            return elements[index];
+        } else {
+            throw new IndexOutOfBoundsException();
+        }
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("[");
