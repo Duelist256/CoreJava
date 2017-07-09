@@ -35,6 +35,7 @@ public class StringArrayList {
 
     public void remove(String value) {
         int index = -1;
+
         for (int i = 0; i < elements.length; i++) {
             if (elements[i].equals(value)) {
                 index = i;
@@ -44,6 +45,12 @@ public class StringArrayList {
 
         if (index != -1) {
             this.remove(index);
+        }
+    }
+
+    public void set(int index, String value) {
+        if (index < elements.length && index >= 0) {
+            elements[index] = value;
         }
     }
 

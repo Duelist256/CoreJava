@@ -7,8 +7,7 @@ public class UseStringArrayList {
     public static void main(String[] args) {
 
         StringArrayList list = new StringArrayList();
-
-        list.add("one");
+        
         System.out.println(list);
 
         list.add("two");
@@ -28,6 +27,9 @@ public class UseStringArrayList {
         System.out.println(list);
 
         list.remove("three");
+        System.out.println(list);
+
+        list.set(0, "four");
         System.out.println(list);
     }
 }
