@@ -1,4 +1,4 @@
-package day170707.lesson;
+package day170707.homework.arraylist;
 
 import java.util.Arrays;
 
@@ -22,11 +22,27 @@ public class StringArrayList {
 
         elements[size++] = string;
     }
-
-    // TODO
+    
     @Override
     public String toString() {
-        return Arrays.toString(elements);
+        StringBuilder sb = new StringBuilder("[");
+
+        if (elements == null) {
+            return "null";
+        }
+
+        if (elements.length > 1 && elements[0] != null) {
+            sb.append(elements[0]);
+        }
+
+        for (int i = 1; i < elements.length; i++) {
+            if (elements[i] != null) {
+                sb.append(", ").append(elements[i]);
+            }
+        }
+
+        sb.append("]");
+        return sb.toString();
     }
 
     public void remove(int index) {

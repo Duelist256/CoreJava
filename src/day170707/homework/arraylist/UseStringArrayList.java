@@ -1,4 +1,4 @@
-package day170707.lesson;
+package day170707.homework.arraylist;
 
 /**
  * Created by Duelist on 07.07.2017.
@@ -26,5 +26,6 @@ public class UseStringArrayList {
 
         list.remove(2);
         System.out.println(list);
+
     }
 }
