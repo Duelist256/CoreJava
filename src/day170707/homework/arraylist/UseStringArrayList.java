@@ -40,5 +40,20 @@ public class UseStringArrayList {
         list.remove(0);
         list.remove(0);
         System.out.println(list.isEmpty());
+
+        System.out.println(list.size());
+
+        for (int i = 0; i < 5; i++) {
+            list.add("elem " + i);
+        }
+        System.out.println(list);
+        System.out.println(list.size());
+
+        list.remove(0);
+        list.remove(0);
+
+        System.out.println(list);
+        System.out.println(list.size());
+
     }
 }

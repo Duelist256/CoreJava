@@ -9,13 +9,18 @@ public class StringArrayList {
 
     private static final int DEFAULT_SIZE = 2;
 
-    String[] elements = new String[DEFAULT_SIZE];
+    private String[] elements = new String[DEFAULT_SIZE];
 
-    int size = 0;
+    private int size = 0;
 
     public boolean isEmpty() {
         return size == 0;
     }
+
+    public int size() {
+        return size;
+    }
+
 
     public void add(String string) {
 
