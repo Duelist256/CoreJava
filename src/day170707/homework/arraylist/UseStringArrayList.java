@@ -27,5 +27,7 @@ public class UseStringArrayList {
         list.remove(2);
         System.out.println(list);
 
+        list.remove("three");
+        System.out.println(list);
     }
 }

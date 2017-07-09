@@ -22,7 +22,31 @@ public class StringArrayList {
 
         elements[size++] = string;
     }
-    
+
+    public void remove(int index) {
+        if (index >= size || index < 0) {
+            return;
+        }
+
+        System.arraycopy(elements, index + 1, elements, index, --size - index);
+//        size--;
+        elements[size] = null;
+    }
+
+    public void remove(String value) {
+        int index = -1;
+        for (int i = 0; i < elements.length; i++) {
+            if (elements[i].equals(value)) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index != -1) {
+            this.remove(index);
+        }
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("[");
@@ -45,14 +69,5 @@ public class StringArrayList {
         return sb.toString();
     }
 
-    public void remove(int index) {
-        if (index >= size || index < 0) {
-            return;
-        }
-
-        System.arraycopy(elements, index + 1, elements, index, --size - index);
-//        size--;
-        elements[size] = null;
-    }
 
 }
