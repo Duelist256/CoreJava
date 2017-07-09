@@ -34,5 +34,11 @@ public class UseStringArrayList {
 
         System.out.println(list.get(0));
         System.out.println(list.get(1));
+
+        System.out.println(list.isEmpty());
+
+        list.remove(0);
+        list.remove(0);
+        System.out.println(list.isEmpty());
     }
 }

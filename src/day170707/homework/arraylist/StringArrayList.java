@@ -13,6 +13,9 @@ public class StringArrayList {
 
     int size = 0;
 
+    public boolean isEmpty() {
+        return size == 0;
+    }
 
     public void add(String string) {
 
@@ -83,6 +86,4 @@ public class StringArrayList {
         sb.append("]");
         return sb.toString();
     }
-
-
 }
