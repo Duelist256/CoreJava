@@ -1,4 +1,4 @@
-package day170710.lesson;
+package day170710.homework.linkedlist;
 
 /**
  * Created by Duelist on 10.07.2017.

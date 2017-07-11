@@ -1,4 +1,4 @@
-package day170710.lesson;
+package day170710.homework.linkedlist;
 
 /**
  * Created by Duelist on 10.07.2017.
@@ -15,8 +15,8 @@ public class StringLinkedList {
             first = last = node;
         } else {
             last.next = node;
-            last = node;
         }
+        last = node;
 
         size++;
     }
@@ -48,6 +48,24 @@ public class StringLinkedList {
             last = null;
         }
 
+        return result;
+    }
+
+    public boolean remove(int index) {
+        Node current = null;
+        boolean result = false;
+
+        if (index < size) {
+            current = first;
+
+            for (int i = 0; i < index; i++) {
+                current = current.next;
+            }
+        }
+
+        if (current != null) {
+            result = remove(current.value);
+        }
         return result;
     }
 

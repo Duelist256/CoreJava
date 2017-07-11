@@ -1,6 +1,4 @@
-package day170707.lesson;
-
-import day170710.lesson.StringLinkedList;
+package day170710.homework.linkedlist;
 
 /**
  * Created by Duelist on 10.07.2017.
@@ -18,6 +16,19 @@ public class UseStringLinkedList {
         System.out.println(list);
         System.out.println(list.remove("one"));
         System.out.println(list.remove("three"));
+        System.out.println(list);
+
+        list.add("twenty");
+        list.add("thirty");
+        list.add("forty");
+
+        System.out.println(list);
+        list.remove(1);
+        System.out.println(list);
+        list.remove(1);
+        System.out.println(list);
+        System.out.println(list.remove(1));
+        System.out.println(list.remove(0));
         System.out.println(list);
     }
 }
