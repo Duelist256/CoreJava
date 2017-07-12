@@ -33,5 +33,7 @@ public class UseMyStringStack {
 
         // testing size()
         System.out.println(Asserts.assertEquals(stack.size(), 2));
+        System.out.println(Asserts.assertEquals(stack.peek(), "four"));
+        System.out.println(Asserts.assertEquals(stack.size(), 2));
     }
 }
