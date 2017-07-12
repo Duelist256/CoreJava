@@ -5,6 +5,6 @@ package day170712.homework.stack;
  */
 public class UseMyStringStack {
     public static void main(String[] args) {
-
+        MyStringStack stack = new MyStringStack(5);
     }
 }

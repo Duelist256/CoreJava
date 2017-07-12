@@ -5,4 +5,9 @@ package day170712.homework.stack;
  */
 public class MyStringStack {
 
+    private final String[] elements;
+
+    public MyStringStack(int size) {
+        elements = new String[size];
+    }
 }
