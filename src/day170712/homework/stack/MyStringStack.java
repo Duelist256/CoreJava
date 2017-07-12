@@ -24,4 +24,13 @@ public class MyStringStack {
         elements[size++] = elem;
         return true;
     }
+
+    public String pop() {
+        if (size <= 0) {
+            return null;
+        }
+        String result = elements[--size];
+        elements[size] = null;
+        return result;
+    }
 }
