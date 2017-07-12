@@ -15,10 +15,13 @@ public class UseMyStringStack {
         System.out.println(Asserts.assertEquals(stack.push("three"), true));
         System.out.println(Asserts.assertEquals(stack.push("four"), false));
 
-
+        // testing pop()
         System.out.println(Asserts.assertEquals(stack.pop(), "three"));
         System.out.println(Asserts.assertEquals(stack.pop(), "two"));
         System.out.println(Asserts.assertEquals(stack.pop(), "one"));
         System.out.println(Asserts.assertEquals(stack.pop(), "null"));
+        
+        System.out.println(Asserts.assertNotEquals(stack.push("two"), false));
+        System.out.println(Asserts.assertNotEquals(stack.push("four"), false));
     }
 }
