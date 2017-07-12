@@ -20,8 +20,12 @@ public class UseMyStringStack {
         System.out.println(Asserts.assertEquals(stack.pop(), "two"));
         System.out.println(Asserts.assertEquals(stack.pop(), "one"));
         System.out.println(Asserts.assertEquals(stack.pop(), "null"));
-        
+
         System.out.println(Asserts.assertNotEquals(stack.push("two"), false));
         System.out.println(Asserts.assertNotEquals(stack.push("four"), false));
+        System.out.println(Asserts.assertNotEquals(stack.push("eight"), false));
+
+        // testing peek()
+        System.out.println(Asserts.assertEquals(stack.peek(), "eight"));
     }
 }
