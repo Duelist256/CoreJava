@@ -27,5 +27,8 @@ public class UseMyStringStack {
 
         // testing peek()
         System.out.println(Asserts.assertEquals(stack.peek(), "eight"));
+        System.out.println(Asserts.assertEquals(stack.pop(), "eight"));
+        System.out.println(Asserts.assertEquals(stack.peek(), "four"));
+        System.out.println(Asserts.assertEquals(stack.peek(), "four"));
     }
 }
