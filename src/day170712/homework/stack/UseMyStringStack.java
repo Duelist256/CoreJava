@@ -17,5 +17,8 @@ public class UseMyStringStack {
 
 
         System.out.println(Asserts.assertEquals(stack.pop(), "three"));
+        System.out.println(Asserts.assertEquals(stack.pop(), "two"));
+        System.out.println(Asserts.assertEquals(stack.pop(), "one"));
+        System.out.println(Asserts.assertEquals(stack.pop(), "null"));
     }
 }
