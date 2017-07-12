@@ -1,5 +1,7 @@
 package day170712.homework.stack;
 
+import java.util.Arrays;
+
 /**
  * Created by Duelist on 12.07.2017.
  */
@@ -40,5 +42,10 @@ public class MyStringStack {
 
     public int size() {
         return size;
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(Arrays.copyOfRange(elements, 0, size));
     }
 }
