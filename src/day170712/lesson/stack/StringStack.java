@@ -1,4 +1,4 @@
-package day170712.stack;
+package day170712.lesson.stack;
 
 import java.util.Arrays;
 

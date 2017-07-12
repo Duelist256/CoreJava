@@ -1,4 +1,4 @@
-package day170712.stack;
+package day170712.lesson.stack;
 
 /**
  * Created by Duelist on 12.07.2017.

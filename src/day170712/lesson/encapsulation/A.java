@@ -1,4 +1,4 @@
-package day170712.encapsulation;
+package day170712.lesson.encapsulation;
 
 /**
  * Created by Duelist on 12.07.2017.
