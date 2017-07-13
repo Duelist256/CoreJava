@@ -18,14 +18,13 @@ public class MaxBlock {
         for (int i = 1; i < str.length(); i++) {
             if (current != str.charAt(i)) {
                 current = str.charAt(i);
-                if (count > maxBlock) {
-                    maxBlock = count;
-                }
+                maxBlock = Math.max(maxBlock, count);
                 count = 1;
             } else {
                 count++;
             }
         }
+        maxBlock = Math.max(maxBlock, count);
         return maxBlock;
     }
 
