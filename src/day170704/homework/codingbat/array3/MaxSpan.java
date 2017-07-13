@@ -8,13 +8,13 @@ public class MaxSpan {
     private static int maxSpan(int[] nums) {
         int maxSpan = 0;
 
-        for (int i = 0; i < nums.length - 1; i++) {
+        for (int i = 0; i < nums.length; i++) {
             int span = 0;
             int num = nums[i];
 
-            for (int j = i + 1; j < nums.length; j++) {
+            for (int j = i; j < nums.length; j++) {
                 if (nums[j] == num) {
-                    span = j - i;
+                    span = j - i + 1;
                 }
             }
 
@@ -22,11 +22,6 @@ public class MaxSpan {
                 maxSpan = span;
             }
         }
-
-        if (nums.length > 0) {
-            maxSpan++;
-        }
-
         return maxSpan;
     }
 
