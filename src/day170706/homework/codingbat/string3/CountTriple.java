@@ -8,17 +8,8 @@ public class CountTriple {
     private static int countTriple(String str) {
         int totalTriples = 0;
 
-        for (int i = 0; i < str.length(); i++) {
-            int tripleForChar = 0;
-            for (int j = i; j < str.length() - 2; j++) {
-                if (str.charAt(i) == str.charAt(j)
-                        && str.charAt(j) == str.charAt(j + 1)
-                        && str.charAt(j + 1) == str.charAt(j + 2)) {
-                    tripleForChar++;
-                }
-            }
-
-            if (tripleForChar >= 3) {
+        for (int i = 0; i < str.length() - 2; i++) {
+            if (str.charAt(i) == str.charAt(i + 1) && str.charAt(i) == str.charAt(i + 2)) {
                 totalTriples++;
             }
         }
@@ -26,8 +17,9 @@ public class CountTriple {
     }
 
     public static void main(String[] args) {
-        System.out.println(countTriple("abcXXXabc"));
-        System.out.println(countTriple("xxxabyyyycd"));
+        System.out.println(countTriple("abcXXXabc")); // 1
+        System.out.println(countTriple("xxxabyyyycd")); // 3
         System.out.println(countTriple("a"));
+        System.out.println(countTriple("122abhhh2")); // 1
     }
 }
