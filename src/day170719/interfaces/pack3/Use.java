@@ -14,7 +14,10 @@ public class Use {
         Z z;
 
         z = c;
-        y = b; y = c;
-        x = a; x = b; x = c;
+        y = b;
+        y = c;
+        x = a;
+        x = b;
+        x = c;
     }
 }
