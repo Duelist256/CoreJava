@@ -2,7 +2,7 @@ package day170724.homework;
 
 public class Rat implements Pet {
 
-    Brain brain = new Hungry();
+    private Brain brain = new Hungry();
 
     @Override
     public void feed() {

@@ -68,5 +68,4 @@ public class Cat implements Pet {
     private void meow() {
         System.out.println("meows");
     }
-
 }
