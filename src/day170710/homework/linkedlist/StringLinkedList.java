@@ -51,21 +51,37 @@ public class StringLinkedList {
         return result;
     }
 
-    public boolean remove(int index) {
-        Node current = null;
-        boolean result = false;
+    public String remove(int index) {
 
-        if (index < size) {
-            current = first;
-
-            for (int i = 0; i < index; i++) {
-                current = current.next;
-            }
+        if (index >= size || index < 0) {
+            return null;
         }
 
-        if (current != null) {
-            result = remove(current.value);
+        Node current = first;
+        Node prev = null;
+
+        int i = 0;
+        while (i != index) {
+            prev = current;
+            current = current.next;
+            i++;
         }
+
+        String result;
+        if (prev == null) {
+            result = first.value;
+            first = current.next;
+        } else {
+            prev.next = current.next;
+            result = current.value;
+            current = null;
+        }
+        size--;
+
+        if (first == null) {
+            last = null;
+        }
+
         return result;
     }
 

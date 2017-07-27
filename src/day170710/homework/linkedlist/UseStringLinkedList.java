@@ -22,10 +22,11 @@ public class UseStringLinkedList {
         list.add("thirty");
         list.add("forty");
 
+        System.out.println("------");
         System.out.println(list);
-        list.remove(1);
+        System.out.println(list.remove(1));
         System.out.println(list);
-        list.remove(1);
+        System.out.println(list.remove(1));
         System.out.println(list);
         System.out.println(list.remove(1));
         System.out.println(list.remove(0));
