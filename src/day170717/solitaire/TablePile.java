@@ -1,6 +1,7 @@
 package day170717.solitaire;
 
 import java.awt.*;
+import java.util.LinkedList;
 
 /**
  * Created by Duelist on 17.07.2017.
@@ -32,7 +33,7 @@ class TablePile extends CardPile {
     public boolean includes(int tx, int ty) {
         // don't test bottom of card
         return x <= tx && tx <= x + Card.width &&
-                y <= ty;
+                y + size * Card.height  / 2 - 35 <= ty && ty <= y + size * Card.height  / 2 + 35;
     }
 
     @Override
@@ -42,31 +43,59 @@ class TablePile extends CardPile {
         }
 
         // if face down, then flip
-        Card topCard = top();
-        if (!topCard.isFaceUp()) {
-            topCard.flip();
-            return;
-        }
+        //Card topCard = top();
+//        if (!topCard.isFaceUp()) {
+//            topCard.flip();
+//            return;
+//        }
 
-        // else see if any suit pile can take card
-        topCard = pop();
+
+
+        Card topCard = pop();
         for (int i = 0; i < 4; i++) {
             if (Solitare.suitPile[i].canTake(topCard)) {
+
                 Solitare.suitPile[i].push(topCard);
+
+                if (top() != null && !top().isFaceUp()) {
+                    top().flip();
+                }
+
                 return;
             }
         }
-        // else see if any other table pile can take card
-        for (int i = 0; i < 7; i++) {
-            if (Solitare.tableau[i].canTake(topCard)) {
-                Solitare.tableau[i].push(topCard);
-                return;
-            }
-        }
+
         // else put it back on our pile
         push(topCard);
+
+
+        LinkedList<Card> cards = new LinkedList<>();
+        while (top() != null && top().isFaceUp()) {
+            cards.push(pop());
+        }
+
+        // else see if any other table pile can take card
+        for (int i = 0; i < 7; i++) {
+//            if (Solitare.tableau[i].canTake(topCard)) {
+            if (!cards.isEmpty() && Solitare.tableau[i].canTake(cards.peek())) {
+//                Solitare.tableau[i].push(topCard);
+                while (!cards.isEmpty()) {
+                    Solitare.tableau[i].push(cards.pop());
+                }
+
+                if (top() != null && !top().isFaceUp()) {
+                    top().flip();
+                }
+
+                return;
+            }
+        }
+        while (!cards.isEmpty()) {
+            push(cards.pop());
+        }
     }
 
+    int size = 0;
     private int stackDisplay(Graphics g, Card aCard) {
         int localy;
         if (aCard == null) {
@@ -74,12 +103,13 @@ class TablePile extends CardPile {
         }
         localy = stackDisplay(g, aCard.link);
         aCard.draw(g, x, localy);
+        size++;
         return localy + 35;
     }
 
     @Override
     public void display(Graphics g) {
+        size = 0;
         stackDisplay(g, top());
     }
-
 }
