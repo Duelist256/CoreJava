@@ -1,4 +1,4 @@
-package package170728.exceptions;
+package day170728.exceptions;
 
 public class ExceptionsExamples {
     public static void main(String[] args) {

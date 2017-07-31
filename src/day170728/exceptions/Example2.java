@@ -1,4 +1,4 @@
-package package170728.exceptions;
+package day170728.exceptions;
 
 public class Example2 {
     private static final int DEFAULT_PAUSE_IN_SECONDS = 5;

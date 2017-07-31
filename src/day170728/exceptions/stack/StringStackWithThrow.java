@@ -1,9 +1,23 @@
-package package170728.exceptions.stack;
+package day170728.exceptions.stack;
 
 import java.util.Arrays;
 
 
 public class StringStackWithThrow {
+
+    public static class Overflow extends Exception{
+
+        private int size;
+
+        Overflow(int size) {
+            this.size = size;
+        }
+
+        public int getSize() {
+            return size;
+        }
+
+    }
 
     private static final int DEFAULT_SIZE = 10;
     private final String[] elements;
@@ -19,8 +33,12 @@ public class StringStackWithThrow {
 
     public boolean push(String elem) throws Exception {
 
+        if (elem == null) {
+            throw new IllegalArgumentException("Nulls are not allowed");
+        }
+
         if (size >= elements.length) {
-            throw new Exception("Stack overflow");
+            throw new Overflow(size);
         }
 
         elements[size++] = elem;

@@ -1,4 +1,6 @@
-package package170728.exceptions.stack;
+package day170728.exceptions.stack;
+
+import static day170728.exceptions.stack.StringStackWithThrow.Overflow;
 
 public class UseStack {
     public static void main(String[] args) {
@@ -13,6 +15,10 @@ public class UseStack {
             stackWithThrow.push("one");
             stackWithThrow.push("two");
             stackWithThrow.push("three");
+        } catch (Overflow e) {
+            System.err.println("Stack overflow occured with size " + e.getSize());
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }

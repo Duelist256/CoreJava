@@ -1,4 +1,4 @@
-package package170728.exceptions.stack;
+package day170728.exceptions.stack;
 
 import java.util.Arrays;
 
