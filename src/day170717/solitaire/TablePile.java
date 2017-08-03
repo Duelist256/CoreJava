@@ -33,8 +33,9 @@ class TablePile extends CardPile {
     public boolean includes(int tx, int ty) {
         // don't test bottom of card
         return x <= tx && tx <= x + Card.width &&
-                y + size * Card.height  / 2 - 35 <= ty && ty <= y + size * Card.height  / 2 + 35;
+                y + size * Card.height / 2 - 35 <= ty && ty <= y + size * Card.height / 2 + 35;
     }
+
 
     @Override
     public void select(int tx, int ty) {
@@ -48,8 +49,6 @@ class TablePile extends CardPile {
 //            topCard.flip();
 //            return;
 //        }
-
-
 
         Card topCard = pop();
         for (int i = 0; i < 4; i++) {
@@ -96,6 +95,7 @@ class TablePile extends CardPile {
     }
 
     int size = 0;
+
     private int stackDisplay(Graphics g, Card aCard) {
         int localy;
         if (aCard == null) {
@@ -109,6 +109,15 @@ class TablePile extends CardPile {
 
     @Override
     public void display(Graphics g) {
+
+        if (!highlight) {
+            g.setColor(Color.green);
+            g.drawRect(x, y + size * Card.height / 2, Card.width, Card.height);
+            highlight = true;
+        } else {
+            highlight = false;
+        }
+
         size = 0;
         stackDisplay(g, top());
     }

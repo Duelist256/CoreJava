@@ -10,6 +10,9 @@ class CardPile {
     // coordinates of the card pile
     protected int x;
     protected int y;
+
+    protected boolean highlight = false;
+
     private Card firstCard;
 
     CardPile(int x, int y) {
@@ -62,6 +65,14 @@ class CardPile {
         } else {
             firstCard.draw(g, x, y);
         }
+    }
+
+    public boolean isHighlighted() {
+        return highlight;
+    }
+
+    public void setHighlight(boolean highlight) {
+        this.highlight = highlight;
     }
 
     public boolean canTake(Card aCard) {
