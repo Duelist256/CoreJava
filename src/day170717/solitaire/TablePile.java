@@ -73,22 +73,28 @@ class TablePile extends CardPile {
             cards.push(pop());
         }
 
-        // else see if any other table pile can take card
         for (int i = 0; i < 7; i++) {
-//            if (Solitare.tableau[i].canTake(topCard)) {
-            if (!cards.isEmpty() && Solitare.tableau[i].canTake(cards.peek())) {
-//                Solitare.tableau[i].push(topCard);
-                while (!cards.isEmpty()) {
-                    Solitare.tableau[i].push(cards.pop());
-                }
-
-                if (top() != null && !top().isFaceUp()) {
-                    top().flip();
-                }
-
-                return;
+            if (!cards.isEmpty() && Solitare.tableau[i].canTake(cards.peek()) && this != Solitare.tableau[i]) {
+                Solitare.tableau[i].setHighlight(true);
             }
         }
+
+        // else see if any other table pile can take card
+//        for (int i = 0; i < 7; i++) {
+////            if (Solitare.tableau[i].canTake(topCard)) {
+//            if (!cards.isEmpty() && Solitare.tableau[i].canTake(cards.peek())) {
+////                Solitare.tableau[i].push(topCard);
+//                while (!cards.isEmpty()) {
+//                    Solitare.tableau[i].push(cards.pop());
+//                }
+//
+//                if (top() != null && !top().isFaceUp()) {
+//                    top().flip();
+//                }
+//
+//                return;
+//            }
+//        }
         while (!cards.isEmpty()) {
             push(cards.pop());
         }
@@ -110,15 +116,14 @@ class TablePile extends CardPile {
     @Override
     public void display(Graphics g) {
 
-        if (!highlight) {
+        if (isHighlighted()) {
             g.setColor(Color.green);
             g.drawRect(x, y + size * Card.height / 2, Card.width, Card.height);
-            highlight = true;
-        } else {
-            highlight = false;
+            setHighlight(false);
         }
 
         size = 0;
         stackDisplay(g, top());
     }
+
 }
