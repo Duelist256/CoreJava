@@ -36,9 +36,29 @@ class TablePile extends CardPile {
                 y + size * Card.height / 2 - 35 <= ty && ty <= y + size * Card.height / 2 + 35;
     }
 
+    private static LinkedList<Card> cards = new LinkedList<>();
+    private static TablePile selectedPile = null;
 
     @Override
     public void select(int tx, int ty) {
+        if (!cards.isEmpty() && canTake(cards.peek())) {
+            while (!cards.isEmpty()) {
+                push(cards.pop());
+            }
+
+            if (selectedPile.top() != null && !selectedPile.top().isFaceUp()) {
+                selectedPile.top().flip();
+                selectedPile = null;
+            }
+            return;
+        } else if (selectedPile != null) {
+            while (!cards.isEmpty()) {
+                selectedPile.push(cards.pop());
+            }
+            selectedPile = null;
+            return;
+        }
+
         if (empty()) {
             return;
         }
@@ -68,7 +88,7 @@ class TablePile extends CardPile {
         push(topCard);
 
 
-        LinkedList<Card> cards = new LinkedList<>();
+        //LinkedList<Card> cards = new LinkedList<>();
         while (top() != null && top().isFaceUp()) {
             cards.push(pop());
         }
@@ -77,6 +97,10 @@ class TablePile extends CardPile {
             if (!cards.isEmpty() && Solitare.tableau[i].canTake(cards.peek()) && this != Solitare.tableau[i]) {
                 Solitare.tableau[i].setHighlight(true);
             }
+        }
+
+        if (selectedPile == null) {
+            selectedPile = this;
         }
 
         // else see if any other table pile can take card
@@ -95,9 +119,11 @@ class TablePile extends CardPile {
 //                return;
 //            }
 //        }
-        while (!cards.isEmpty()) {
-            push(cards.pop());
-        }
+
+//        while (!cards.isEmpty()) {
+//            push(cards.pop());
+//        }
+
     }
 
     int size = 0;
