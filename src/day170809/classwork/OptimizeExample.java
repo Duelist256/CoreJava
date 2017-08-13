@@ -1,4 +1,4 @@
-package day170809;
+package day170809.classwork;
 
 public class OptimizeExample {
     public static void main(String[] args) {
