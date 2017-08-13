@@ -25,15 +25,15 @@ public class Dictionary<K, V> implements Iterable<Dictionary.Pair> {
     }
 
     public void put(K key, V value) {
-        int index = hash(key);
-        if (data[index] == null) {
-            data[index] = new ArrayList<>();
+        int hash = hash(key);
+        if (data[hash] == null) {
+            data[hash] = new ArrayList<>();
         }
 
-        Pair pair = getPair(key);
+        Pair pair = getPair(hash, key);
 
         if (pair == null) {
-            data[index].add(new Pair<>(key, value));
+            data[hash].add(new Pair<>(key, value));
             return;
         }
 
@@ -42,13 +42,14 @@ public class Dictionary<K, V> implements Iterable<Dictionary.Pair> {
     }
 
     public V get(K key) {
-        Pair pair = getPair(key);
+        int hash = hash(key);
+        Pair pair = getPair(hash, key);
+
         return pair == null ? null : (V) pair.value;
     }
 
-    private Pair getPair(K key) {
-        int index = hash(key);
-        List<Pair> list = data[index];
+    private Pair getPair(int hash, K key) {
+        List<Pair> list = data[hash];
 
         if (list == null) { // guard condition
             return null;
