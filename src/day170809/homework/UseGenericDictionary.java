@@ -51,6 +51,7 @@ public class UseGenericDictionary {
         System.out.println(d3.get(-134.42));
         System.out.println(d3.get(1.00));
         System.out.println(d3.get(1.02));
+        System.out.println("size = " + d3.size());
 
         for (Dictionary.Pair pair : d3) {
             System.out.println(pair.key + " : " + pair.value);
@@ -68,10 +69,12 @@ public class UseGenericDictionary {
         System.out.println(d4.get(-1.12F));
         System.out.println(d4.get(2.11F));
         System.out.println(d4.get(-134.42F));
+        System.out.println("size = " + d4.size());
+        d4.put(1.1F, 'E');
+        System.out.println("size = " + d4.size());
 
         for (Dictionary.Pair pair : d4) {
             System.out.println(pair.key + " : " + pair.value);
         }
-
     }
 }

@@ -18,7 +18,10 @@ public class Dictionary<K, V> implements Iterable<Dictionary.Pair> {
         }
     }
 
+    int loadFactor;
+
     List<Pair>[] data = new List[MAX];
+    private int size = 0;
 
     private int hash(K key) {
         return key.hashCode() & 0x7FFFFFFF % data.length;
@@ -34,11 +37,12 @@ public class Dictionary<K, V> implements Iterable<Dictionary.Pair> {
 
         if (pair == null) {
             data[hash].add(new Pair<>(key, value));
+            size++;
             return;
         }
 
         pair.value = value;
-
+        size++;
     }
 
     public V get(K key) {
@@ -103,5 +107,9 @@ public class Dictionary<K, V> implements Iterable<Dictionary.Pair> {
                 return listIterator.next();
             }
         };
+    }
+
+    public int size() {
+        return size;
     }
 }
