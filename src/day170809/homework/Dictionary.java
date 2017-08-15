@@ -77,6 +77,25 @@ public class Dictionary<K, V> implements Iterable<Dictionary.Pair> {
         return pair == null ? null : (V) pair.value;
     }
 
+    public V remove(K key) {
+        int hash = hash(key);
+        List<Pair> list = data[hash];
+
+        if (list == null) {
+            return null;
+        }
+
+        for (Pair pair : list) {
+            if (pair.key.equals(key)) {
+                list.remove(pair);
+                size--;
+                return (V) pair.value;
+            }
+        }
+
+        return null;
+    }
+
     private Pair getPair(int hash, K key) {
         List<Pair> list = data[hash];
 
