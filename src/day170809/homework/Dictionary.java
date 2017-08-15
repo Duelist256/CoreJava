@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Dictionary<K, V> implements Iterable<Dictionary.Pair> {
 
-    private static final int MAX = 3;
+    private static final int DEFAULT_SIZE = 3;
 
     public static class Pair<K, V> {
         K key;
@@ -18,9 +18,9 @@ public class Dictionary<K, V> implements Iterable<Dictionary.Pair> {
         }
     }
 
-    int loadFactor;
+    final private static float LOAD_FACTOR = 0.75F;
 
-    List<Pair>[] data = new List[MAX];
+    List<Pair>[] data = new List[DEFAULT_SIZE];
     private int size = 0;
 
     private int hash(K key) {
@@ -28,6 +28,31 @@ public class Dictionary<K, V> implements Iterable<Dictionary.Pair> {
     }
 
     public void put(K key, V value) {
+        putVal(key, value);
+
+        if (size > data.length && data.length / size > LOAD_FACTOR) {
+            resize();
+        }
+    }
+
+    private void resize() {
+        List<Pair>[] oldData = data;
+        int newLength = oldData.length * 3 / 2;
+        this.data = new List[newLength];
+        size = 0;
+
+
+        for (int i = 0; i < oldData.length; i++) {
+            if (oldData[i] != null) {
+                for (int j = 0; j < oldData[i].size(); j++) {
+                    this.putVal((K) oldData[i].get(j).key, (V) oldData[i].get(j).value);
+                    size++;
+                }
+            }
+        }
+    }
+
+    private void putVal(K key, V value) {
         int hash = hash(key);
         if (data[hash] == null) {
             data[hash] = new ArrayList<>();

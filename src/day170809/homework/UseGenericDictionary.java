@@ -76,5 +76,7 @@ public class UseGenericDictionary {
         for (Dictionary.Pair pair : d4) {
             System.out.println(pair.key + " : " + pair.value);
         }
+
+
     }
 }
