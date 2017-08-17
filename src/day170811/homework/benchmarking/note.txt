@@ -1,0 +1,13 @@
+Addition time
+LinkedlList = 135 838 894 ns
+ArrayList   =  66 934 849 ns
+TreeSet     = 953 535 340 ns
+
+Sorting time
+LinkedList = 1 745 760 738 ns
+ArrayList  =   284 293 054 ns
+
+Binary Search Time
+LinkedList = 14 812 038 ns
+ArrayList  =     31 236 ns
+TreeSet    =     16 956 ns
