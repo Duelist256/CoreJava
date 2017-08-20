@@ -1,4 +1,4 @@
-package day170816;
+package day170816.lesson;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,7 +14,9 @@ public class QuickSortExample {
     }
 
     private static void sort(Comparable[] a, int lo, int hi) {
-        if (hi <= lo) return;
+        if (hi <= lo) {
+            return;
+        }
         int j = partition(a, lo, hi);
         sort(a, lo, j - 1);
         sort(a, j + 1, hi);
@@ -24,11 +26,17 @@ public class QuickSortExample {
         int i = lo, j = hi + 1;
         while (true) {
             while (less(a[++i], a[lo]))
-                if (i == hi) break;
+                if (i == hi) {
+                    break;
+                }
             while (less(a[lo], a[--j]))
-                if (j == lo) break;
+                if (j == lo) {
+                    break;
+                }
 
-            if (i >= j) break;
+            if (i >= j) {
+                break;
+            }
             exch(a, i, j);
         }
         exch(a, lo, j);

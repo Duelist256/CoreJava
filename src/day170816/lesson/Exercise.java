@@ -1,4 +1,4 @@
-package day170816;
+package day170816.lesson;
 
 public class Exercise {
     public static void main(String[] args) {
