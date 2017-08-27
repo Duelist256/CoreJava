@@ -1,4 +1,4 @@
-package day170811;
+package day170811.homework;
 
 /**
  * Created by Duelist on 17.08.2017.
