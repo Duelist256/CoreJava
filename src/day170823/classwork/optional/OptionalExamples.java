@@ -1,4 +1,4 @@
-package day170823.optional;
+package day170823.classwork.optional;
 
 import java.util.Optional;
 import java.util.Random;

@@ -1,4 +1,4 @@
-package day170823.streams;
+package day170823.classwork.streams;
 
 import java.util.ArrayList;
 import java.util.List;
