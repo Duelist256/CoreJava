@@ -6,11 +6,13 @@ import java.util.concurrent.Executor;
 
 public class Worker implements Executor {
 
-    static final Runnable POISON_PILL = () -> {
+    private static final Runnable POISON_PILL = () -> {
     };
 
-    BlockingQueue<Runnable> tasks = new BlockingQueue<>();
+    private BlockingQueue<Runnable> tasks = new BlockingQueue<>();
+
     volatile private boolean stop;
+    volatile private boolean poisoned;
 
     public Worker() {
         new Thread(this::processTasks).start();
@@ -18,6 +20,11 @@ public class Worker implements Executor {
 
     @Override
     public void execute(Runnable command) {
+
+        if (stop || poisoned) {
+            throw new RuntimeException("Worker has been shutdown");
+        }
+
         tasks.put(command);
     }
 
@@ -34,6 +41,7 @@ public class Worker implements Executor {
     }
 
     public void shutdown() {
+        poisoned = true;
         tasks.put(POISON_PILL);
     }
 

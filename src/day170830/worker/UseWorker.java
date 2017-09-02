@@ -21,8 +21,15 @@ public class UseWorker {
             });
         }
 
+
+//        worker.shutdown();
+
         List<Runnable> tasks = worker.shutdownNow();
         System.out.println(tasks);
         System.out.println(tasks.size());
+
+        worker.execute(() -> {
+            System.out.println("ek");
+        });
     }
 }
