@@ -22,7 +22,7 @@ public class Worker implements Executor {
     }
 
     private void processTasks() {
-        while (true) {
+        while (!stop) {
             Runnable task = tasks.take();
 
             if (task == POISON_PILL) {
@@ -38,7 +38,7 @@ public class Worker implements Executor {
     }
 
     public List<Runnable> shutdownNow() {
-        // TODO
-        return null;
+        stop = true;
+        return tasks.getItems();
     }
 }

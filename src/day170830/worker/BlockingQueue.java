@@ -1,6 +1,7 @@
 package day170830.worker;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class BlockingQueue<T> {
@@ -25,5 +26,9 @@ public class BlockingQueue<T> {
             }
             return items.poll();
         }
+    }
+
+    public List<T> getItems() {
+        return (List) items;
     }
 }
