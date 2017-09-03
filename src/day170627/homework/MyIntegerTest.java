@@ -36,7 +36,13 @@ public class MyIntegerTest {
         System.out.println(Asserts.assertEquals(MyInteger.toOctalString(5), Integer.toOctalString(5)));
         System.out.println(Asserts.assertEquals(MyInteger.toOctalString(9), Integer.toOctalString(9)));
         System.out.println(Asserts.assertEquals(MyInteger.toOctalString(Integer.MAX_VALUE), Integer.toOctalString(Integer.MAX_VALUE)));
-        System.out.println(Asserts.assertEquals(MyInteger.toOctalString(-10), Integer.toOctalString(-10)));
+        System.out.println(Asserts.assertEquals(
+                MyInteger.toOctalString(Integer.MIN_VALUE + 1_000_000_000), Integer.toOctalString(Integer.MIN_VALUE + 1_000_000_000)));
+        System.out.println(Asserts.assertEquals(MyInteger.toOctalString(-12), Integer.toOctalString(-12)));
+        System.out.println(Asserts.assertEquals(MyInteger.toOctalString(Integer.MIN_VALUE), Integer.toOctalString(Integer.MIN_VALUE)));
+        System.out.println(Asserts.assertEquals(MyInteger.toOctalString(Integer.MIN_VALUE + 1), Integer.toOctalString(Integer.MIN_VALUE + 1)));
+        System.out.println(Asserts.assertEquals(MyInteger.toOctalString(Integer.MIN_VALUE + 1), Integer.toOctalString(Integer.MIN_VALUE + 1)));
+        System.out.println(Asserts.assertEquals(MyInteger.toOctalString(-1), Integer.toOctalString(-1)));
 
         System.out.println("\ntoString() test");
         System.out.println("base 2 test");

@@ -72,9 +72,10 @@ public class MyInteger {
             return str;
         }
 
+        // if number is positive
         while (x != 0) {
             str = HEX_NUMERALS.charAt(x % 16) + str;
-            x /=  16;
+            x /= 16;
         }
         return str;
     }
@@ -84,12 +85,63 @@ public class MyInteger {
             return "0";
         }
 
+        if (x == Integer.MIN_VALUE) {
+            return "20000000000";
+        }
+
         String str = "";
 
-        // FIXME Negative case
+        // if number is negative
+        if (x < 0) {
+            // convert to octal as if number is positive and negate
+            for (int i = Math.abs(x); i > 0; i /= 8) {
+                str = Math.abs(7 - (i % 8)) + str;
+            }
 
+            // plus one
+            String newStr = "";
+            for (int i = str.length() - 1; i >= 0; i--) {
+                char c = str.charAt(i);
+                int digit = Character.getNumericValue(c);
+
+                if (digit < 7) {
+                    newStr = (digit + 1) + newStr;
+                    int currentLength = newStr.length();
+                    for (int j = str.length() - 1 - currentLength; j >= 0; j--) {
+                        newStr = str.charAt(j) + newStr;
+                    }
+                    break;
+
+                } else if (digit == 7) {
+                    newStr = 0 + newStr;
+                }
+            }
+
+            int restOfNums = 11 - newStr.length();
+            if (restOfNums > newStr.length()) {
+                for (int i = 0; i < restOfNums - 1; i++) {
+                    newStr = 7 + newStr;
+                }
+
+                if (x < Integer.MIN_VALUE / 2) {
+                    newStr = 2 + newStr;
+                } else {
+                    newStr = 3 + newStr;
+                }
+            } else {
+                if (x < Integer.MIN_VALUE / 2) {
+                    newStr = 2 + newStr.substring(1);
+                } else {
+                    newStr = 3 + newStr.substring(1);
+                }
+            }
+
+            return newStr;
+        }
+
+        // if number is positive
         while (x != 0) {
-            str = Math.abs(x % 8) + str;
+            str = x % 8 + str;
             x /= 8;
         }
         return str;
