@@ -94,7 +94,15 @@ class TablePile extends CardPile {
             temp += (35 * (totalCards - 1));
         }
 
-        int chosenCards = (temp - (ty - 80)) / 35;
+        int chosenCards = 0;
+
+        int area = temp - (ty - 80);
+
+        if (ty - 80 >= temp - 70 && ty - 80 <= temp) {
+            chosenCards++;
+        } else {
+            chosenCards = area / 35;
+        }
 
         if (chosenCards == 0 || chosenCards > flippedCards) {
             return;
@@ -142,7 +150,6 @@ class TablePile extends CardPile {
 
     @Override
     public void display(Graphics g) {
-        System.out.println(isHighlighted());
         if (isHighlighted()) {
             g.setColor(Color.green);
             g.drawRect(x, y + totalCards * Card.height / 2, Card.width, Card.height);
