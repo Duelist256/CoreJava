@@ -32,6 +32,8 @@ class DiscardPile extends CardPile {
         for (int i = 0; i < 7; i++) {
             if (Solitare.tableau[i].canTake(topCard)) {
                 Solitare.tableau[i].push(topCard);
+                int flipped = Solitare.tableau[i].getFlippedCards();
+                Solitare.tableau[i].setFlippedCards(flipped + 1);
                 return;
             }
         }
