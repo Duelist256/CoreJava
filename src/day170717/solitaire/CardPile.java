@@ -13,7 +13,7 @@ class CardPile {
 
     protected boolean highlight = false;
 
-    private Card firstCard;
+    protected Card firstCard;
 
     CardPile(int x, int y) {
         this.x = x;

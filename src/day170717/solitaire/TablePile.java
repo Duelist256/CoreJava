@@ -8,7 +8,11 @@ import java.util.LinkedList;
  */
 class TablePile extends CardPile {
 
-    private int size = 0;
+    public int getTotalCards() {
+        return totalCards;
+    }
+
+    private int totalCards = 0;
 
     public int getFlippedCards() {
         return flippedCards;
@@ -47,12 +51,12 @@ class TablePile extends CardPile {
     public boolean includes(int tx, int ty) {
         // don't test bottom of card
         return x <= tx && tx <= x + Card.width &&
-                80 <= ty && ty <= y + size * Card.height / 2 + 35;
-//                y + size * Card.height / 2 - 35 <= ty && ty <= y + size * Card.height / 2 + 35;
+                80 <= ty && ty <= y + totalCards * Card.height / 2 + 35;
+//                y + totalCards * Card.height / 2 - 35 <= ty && ty <= y + totalCards * Card.height / 2 + 35;
     }
 
-    private static LinkedList<Card> cards = new LinkedList<>();
-    private static TablePile selectedPile = null;
+    static LinkedList<Card> cards = new LinkedList<>();
+    static TablePile selectedPile = null;
 
     @Override
     public void select(int tx, int ty) {
@@ -82,34 +86,15 @@ class TablePile extends CardPile {
             return;
         }
 
-        Card topCard = pop();
-        for (int i = 0; i < 4; i++) {
-            if (Solitare.suitPile[i].canTake(topCard)) {
-                flippedCards--;
-                Solitare.suitPile[i].push(topCard);
-
-                if (top() != null && !top().isFaceUp()) {
-                    top().flip();
-                    flippedCards++;
-                }
-
-                return;
-            }
-        }
-
-        // else put it back on our pile
-        push(topCard);
 
         int temp = 0;
 
-        if (size >= 1) {
+        if (totalCards >= 1) {
             temp += 70;
-            temp += (35 * (size - 1));
+            temp += (35 * (totalCards - 1));
         }
 
         int chosenCards = (temp - (ty - 80)) / 35;
-//        System.out.println("choosed = " + chosenCards);
-//        System.out.println("flipped = " + flippedCards);
 
         if (chosenCards == 0 || chosenCards > flippedCards) {
             return;
@@ -122,14 +107,20 @@ class TablePile extends CardPile {
             }
         }
         flippedCards -= cards.size();
-//        while (top() != null && top().isFaceUp()) {
-//            cards.push(pop());
-//        }
 
+        if (cards.size() == 1) {
+            for (int i = 0; i < 4; i++) {
+                if (Solitare.suitPile[i].canTake(cards.peek())) {
+                    Solitare.suitPile[i].setHighlight(true);
+                }
+            }
+        }
 
-        for (int i = 0; i < 7; i++) {
-            if (!cards.isEmpty() && Solitare.tableau[i].canTake(cards.peek()) && this != Solitare.tableau[i]) {
-                Solitare.tableau[i].setHighlight(true);
+        if (!cards.isEmpty()) {
+            for (int i = 0; i < 7; i++) {
+                if (Solitare.tableau[i].canTake(cards.peek()) && this != Solitare.tableau[i]) {
+                    Solitare.tableau[i].setHighlight(true);
+                }
             }
         }
 
@@ -145,19 +136,22 @@ class TablePile extends CardPile {
         }
         localy = stackDisplay(g, aCard.link);
         aCard.draw(g, x, localy);
-        size++;
+        totalCards++;
         return localy + 35;
     }
 
     @Override
     public void display(Graphics g) {
+        System.out.println(isHighlighted());
         if (isHighlighted()) {
             g.setColor(Color.green);
-            g.drawRect(x, y + size * Card.height / 2, Card.width, Card.height);
+            g.drawRect(x, y + totalCards * Card.height / 2, Card.width, Card.height);
             setHighlight(false);
+        } else {
+            g.setColor(Color.black);
         }
 
-        size = 0;
+        totalCards = 0;
         stackDisplay(g, top());
     }
 

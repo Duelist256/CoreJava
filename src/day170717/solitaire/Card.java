@@ -62,7 +62,9 @@ class Card {
     public void draw(Graphics g, int x, int y) {
         // clear rectangle, draw border
         g.clearRect(x, y, width, height);
+
         g.setColor(Color.black);
+
         g.drawRect(x, y, width, height);
         // draw body of card
         if (isFaceUp()) {
