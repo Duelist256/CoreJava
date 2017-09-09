@@ -46,7 +46,16 @@ public class QuickSort {
     }
 
     public static void sort(int[] arr) {
-        // todo shuffle
+//        shuffle(arr);
         sort(arr, 0, arr.length - 1);
+    }
+
+    private static void shuffle(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int r = (int) (Math.random() * (i + 1));
+            int tmp = arr[r];
+            arr[r] = arr[i];
+            arr[i] = tmp;
+        }
     }
 }
