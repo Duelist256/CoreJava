@@ -20,7 +20,7 @@ public class ReThrowExample {
         try {
             buildBasement();
         } catch (Exception e) {
-            //throw new problemWithTechnique(e); // todo
+            throw new ProblemWithTechnique(e);
         }
     }
 
