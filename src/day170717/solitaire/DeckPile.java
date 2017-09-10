@@ -29,7 +29,7 @@ class DeckPile extends CardPile {
             // then add the card found there
             push(pileOne.pop());
             // then put the decks back together
-            while (!pileTwo.empty()) {
+            while (!pileTwo.isEmpty()) {
                 pileOne.push(pileTwo.pop());
             }
         }
@@ -37,7 +37,7 @@ class DeckPile extends CardPile {
 
     @Override
     public void select(int tx, int ty) {
-        if (empty()) {
+        if (isEmpty()) {
             Card card;
             card = Solitare.discardPile.pop();
             while (card != null) {

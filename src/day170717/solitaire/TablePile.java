@@ -38,7 +38,7 @@ class TablePile extends CardPile {
 
     @Override
     public boolean canTake(Card aCard) {
-        if (empty()) {
+        if (isEmpty()) {
             return aCard.getRank() == 12;
         }
         Card topCard = top();
@@ -82,7 +82,7 @@ class TablePile extends CardPile {
             return;
         }
 
-        if (empty()) {
+        if (isEmpty()) {
             return;
         }
 

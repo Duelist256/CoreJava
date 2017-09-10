@@ -13,7 +13,7 @@ class SuitPile extends CardPile {
 
     @Override
     public boolean canTake(Card aCard) {
-        if (empty()) {
+        if (isEmpty()) {
             return aCard.getRank() == 0;
         }
         Card topCard = top();
