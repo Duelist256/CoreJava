@@ -25,15 +25,24 @@ class SuitPile extends CardPile {
     public void select(int tx, int ty) {
 
         if (TablePile.cards != null && TablePile.cards.size() == 1) {
-            push(TablePile.cards.pop());
+            if (canTake(TablePile.cards.peek())) {
+                push(TablePile.cards.pop());
+            } else {
+                TablePile.selectedPile.push(TablePile.cards.pop());
+                incrementFlippedCards();
+            }
 
             if (TablePile.selectedPile.getTotalCards() > 0 && !TablePile.selectedPile.top().isFaceUp()) {
                 TablePile.selectedPile.top().flip();
-                int flippedCards = TablePile.selectedPile.getFlippedCards();
-                TablePile.selectedPile.setFlippedCards(flippedCards + 1);
+                incrementFlippedCards();
             }
             TablePile.selectedPile = null;
         }
+    }
+
+    private void incrementFlippedCards() {
+        int flippedCards = TablePile.selectedPile.getFlippedCards();
+        TablePile.selectedPile.setFlippedCards(flippedCards + 1);
     }
 
     @Override
