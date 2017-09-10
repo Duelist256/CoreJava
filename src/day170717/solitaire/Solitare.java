@@ -17,6 +17,7 @@ public class Solitare extends Applet {
 
     @Override
     public void init() {
+        resize(new Dimension(400, 375));
         // first allocate the arrays
         allPiles = new CardPile[13];
         suitPile = new SuitPile[4];
