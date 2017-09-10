@@ -29,21 +29,27 @@ class SuitPile extends CardPile {
                 push(TablePile.cards.pop());
             } else {
                 TablePile.selectedPile.push(TablePile.cards.pop());
-                incrementFlippedCards();
+                TablePile.selectedPile.incrementFlippedCards();
             }
 
             if (TablePile.selectedPile.getTotalCards() > 0 && !TablePile.selectedPile.top().isFaceUp()) {
                 TablePile.selectedPile.top().flip();
-                incrementFlippedCards();
+                TablePile.selectedPile.incrementFlippedCards();
             }
             TablePile.selectedPile = null;
+        } else {
+            if (top() != null) {
+                for (int i = 0; i < Solitare.tableau.length; i++) {
+                    if (Solitare.tableau[i].canTake(top())) {
+                        Solitare.tableau[i].push(pop());
+                        Solitare.tableau[i].incrementFlippedCards();
+                        break;
+                    }
+                }
+            }
         }
     }
 
-    private void incrementFlippedCards() {
-        int flippedCards = TablePile.selectedPile.getFlippedCards();
-        TablePile.selectedPile.setFlippedCards(flippedCards + 1);
-    }
 
     @Override
     public void display(Graphics g) {

@@ -137,6 +137,10 @@ class TablePile extends CardPile {
         }
     }
 
+    public void incrementFlippedCards() {
+        flippedCards++;
+    }
+
     private int stackDisplay(Graphics g, Card aCard) {
         int localy;
         if (aCard == null) {
